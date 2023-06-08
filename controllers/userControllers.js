@@ -2,7 +2,10 @@ const Doctor = require("../models/doctor");
 const Patient = require("../models/patient");
 const jwt = require("jsonwebtoken");
 
-
+// Home controller
+module.exports.home = function (req, res) {
+    return res.end('<h1> Expess is up and running</h1>')
+  };
 // Doctor controller
 module.exports.registerDoctor = async (req, res, next) =>{
     try {
@@ -70,7 +73,7 @@ module.exports.registerPatient = async (req, res, next) => {
 };
 
 
-
+// this controoler for creat reports
 module.exports.createReport = async (req, res, next) => {
     try {
         const patient = await Patient.findById(req.params.id);
